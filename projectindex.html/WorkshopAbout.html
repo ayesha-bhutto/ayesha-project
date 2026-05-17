@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    /* --- CSS Properties --- */
+    :root {
+        --honda-red: #cc0000;
+        --honda-black: #1a1a1a;
+        --dark-grey: #333333;
+        --white: #ffffff;
+        --transition: all 0.3s ease;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    /* --- FLEXBOX STRUCTURE --- */
+    .workshop-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header Styling */
+    .header {
+        background-color: var(--honda-black);
+        color: var(--white);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid var(--honda-red);
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 24px;
+        color: var(--white);
+    }
+    
+    .logo span {
+        color: var(--honda-red);
+    }
+
+    /* --- MAIN CONTENT LAYOUT --- */
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+        flex: 1;
+    }
+
+    /* About Section Styling */
+    .about-card {
+        flex: 2 1 600px;
+        background: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Services Side Panel (Clickable Target) */
+    .services-panel {
+        flex: 1 1 300px;
+        background-color: var(--honda-black);
+        color: var(--white);
+        padding: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+        display: block;
+    }
+
+    /* --- TRANSFORM PROPERTIES (INTERACTION) --- */
+    .services-panel:hover {
+        transform: translateY(-10px) scale(1.02);
+        background-color: var(--honda-red);
+        box-shadow: 0 10px 20px rgba(204, 0, 0, 0.3);
+    }
+
+    .about-card h1 {
+        color: var(--honda-black);
+        border-left: 5px solid var(--honda-red);
+        padding-left: 15px;
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .feature-list li {
+        background: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 3px solid var(--honda-black);
+    }
+    .rt{
+        font-size: 40px;
+        color:blue;
+    }
+</style>
+</head>
+<body>
+
+<div class="workshop-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">HONDA <span>WORKSHOP</span></div>
+        <nav>Authorized Service Center</nav>
+    </header>
+
+    <!-- Main Section -->
+    <div class="main-content">
+        <!-- About Content -->
+        <section class="about-card">
+            <h1>About Our Expert Honda Service</h1>
+            <p>Welcome to the premier Honda workshop, where passion meets precision. Our facility is designed to provide top-tier care for your vehicle, utilizing authorized tools and diagnostic equipment directly from Honda.</p>
+            <p>With a, "Red and Black" aesthetic designed to reflect the sporty and high-performance nature of the Honda brand, our workshop offers a clean, professional, and welcoming atmosphere for all customers.</p>
+            
+            <h3>Why Choose Us?</h3>
+            <ul class="feature-list">
+                <li>Factory-trained technicians specialized in Honda vehicles.</li>
+                <li>Genuine Honda parts and authorized accessories.</li>
+                <li>State-of-the-art diagnostic technology.</li>
+                <li>Fast, reliable service with transparent pricing.</li>
+            </ul>
+        </section>
+
+        <!-- Clickable Services Panel -->
+         <a href="services.html" class="services-panel" id="services-target">
+            <div>
+            <h1>Our services</h1>
+            <p>Click here to view our comprehensive range of services, including:</p>
+            <ul>
+                <li>Oil Changes</li>
+                <li>Engine Diagnostics</li>
+                <li>Brake Repairs</li>
+                <li>Tire Service</li>
+            </ul>
+            </div>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

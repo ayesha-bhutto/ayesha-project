@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    :root {
+        --honda-red: #cc0000;
+        --honda-black: #1a1a1a;
+        --white: #ffffff;
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    html { scroll-behavior: smooth; } /* Smooth transition when clicking link */
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #111; /* Dark background for red/black theme */
+        color: #ddd;
+    }
+
+    /* --- FLEXBOX WRAPPER --- */
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    /* Header */
+    .header {
+        background-color: var(--honda-black);
+        padding: 20px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 5px solid var(--honda-red);
+    }
+
+    /* --- TOP SECTION (About & Link) --- */
+    .hero-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    .about-box {
+        flex: 2 1 500px;
+        background: var(--honda-black);
+        padding: 30px;
+        border-radius: 10px;
+        border-top: 4px solid var(--honda-red);
+    }
+
+    /* Clickable Link Panel */
+    .go-to-services {
+        flex: 1 1 300px;
+        background: var(--honda-red);
+        color: white;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        /* TRANSFORM PROPERTY */
+        transition: var(--transition);
+    }
+
+    .go-to-services:hover {
+        transform: scale(1.05) rotate(1deg);
+        filter: brightness(1.2);
+        box-shadow: 0 15px 30px rgba(204, 0, 0, 0.4);
+    }
+
+    /* --- SERVICES SECTION (Flexbox Grid) --- */
+    #services {
+        padding: 60px 5%;
+        background: #1a1a1a;
+    }
+
+    .services-title {
+        text-align: center;
+        color: var(--honda-red);
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .service-card {
+        flex: 1 1 280px;
+        max-width: 350px;
+        background: #222;
+        padding: 25px;
+        border-radius: 8px;
+        border-bottom: 3px solid transparent;
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    /* TRANSFORM & HOVER */
+    .service-card:hover {
+        background: #2a2a2a;
+        border-bottom: 3px solid var(--honda-red);
+        transform: translateY(-15px);
+    }
+
+    .service-card i {
+        font-size: 40px;
+        color: var(--honda-red);
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    h2, h3 { color: var(--white); }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1 style="margin:0">HONDA<span style="color:var(--honda-red)">PRO</span></h1>
+        <span>Expert Workshop</span>
+    </header>
+
+    <!-- Top Content Area -->
+    <div class="hero-flex">
+        <section class="about-box">
+            <h2>Detailed Workshop History</h2>
+            <p>Founded on a legacy of engineering excellence, our Honda workshop has served enthusiasts for over two decades. We specialize in maintaining the high-revving soul of your Honda, ensuring every bolt is tightened to factory specifications.</p>
+            <p>Our red and black facility isn't just for looks; it represents the precision and power of the Honda racing spirit. We use only synthetic fluids and genuine parts to keep your VTEC screaming or your hybrid humming efficiently.</p>
+        </section>
+
+        <!-- Clickable Transform Link -->
+        <a href="#services" class="go-to-services">
+            <h2>EXPLORE SERVICES</h2>
+            <p>Click to see our technical capabilities</p>
+            <span style="font-size: 30px;">↓</span>
+        </a>
+    </div>
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="services-title">Workshop Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Engine Tuning</h3>
+                <p>Full VTEC system diagnostics, valve adjustments, and performance remapping for Honda power units.</p>
+            </div>
+            <div class="service-card">
+                <h3>Brake Systems</h3>
+                <p>Brembo upgrades and standard ABS maintenance to ensure your stopping power matches your speed.</p>
+            </div>
+            <div class="service-card">
+                <h3>Transmission</h3>
+                <p>Specialized care for both precision manual gearboxes and high-efficiency CVT transmissions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Hybrid Care</h3>
+                <p>Advanced diagnostic services for Honda's e:HEV and IMA hybrid battery systems.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
